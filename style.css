@@ -11,12 +11,12 @@ html, body {
 
 body {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.25fr 2fr;
     grid-gap: 10px;
 }
 
 #image-holder {
-    height: 100vh;
+    height: 160vh;
     background-image: url('image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,7 +24,7 @@ body {
 
 #trans-bar {
     margin-top: 140px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     height: 20vh;
     text-align: center;
     position: relative;
@@ -33,17 +33,28 @@ body {
 #trans-bar img {
     width: 80px;
     top: 10px;
-    right: 250px;
+    right: 280px;
     position: absolute;
 }
 
-.text {
+.trans-text {
     font-family: 'Norse-Bold', sans-serif;
     color: white;
     font-size: 100px;
     padding-top: 13px;
     position: absolute;
     top: 0px;
-    left: 180px;
+    left: 210px;
+}
+
+.text-holder {
+    padding-top: 120px;
+    /* padding-bottom: ; */
+    padding-left: 30px;
+    padding-right: 100px;
+}
+
+#form-holder p {
+    font-size: 25px;
 }
 
