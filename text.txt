@@ -1,0 +1,160 @@
+        <form id="registration-form">
+            <h2>Let's do this!</h2>
+            <table>
+              <tr>
+                <td><label for="first-name">First Name:</label></td>
+                <td><input type="text" id="first-name" required></td>
+                <td><label for="last-name">Last Name:</label></td>
+                <td><input type="text" id="last-name" required></td>
+              </tr>
+              <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" required></td>
+                <td><label for="phone">Phone Number:</label></td>
+                <td><input type="tel" id="phone" required></td>
+              </tr>
+              <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" required></td>
+                <td><label for="confirm-password">Confirm Password:</label></td>
+                <td><input type="password" id="confirm-password" required></td>
+              </tr>
+            </table>
+            <button type="submit" class="create-account-btn">Create Account</button>
+          </form>
+
+
+Create an HTML form with the following fields:
+
+-> first name
+-> last name
+-> email
+-> phone number
+-> password
+-> confirm password
+
+These fields will be in an orientation such that there are three rows and two columns inside the form. The field names will be above the respective fields. Also, add a 'Create Account button below these fields, which submits the data entered. All the fields must be validated from the client side based on the following conditions:
+
+-> First name' and 'last name' can contain any text except numbers or special characters (use regular expression in html)
+-> 'email' and 'phone' should have input types of 'email' and 'tel', respectively, using HTML only 
+-> 'password' can contain any character but must be at least 8 characters long. These 8 characters also must include an uppercase alphabet, a number and a special character (use regular expression in html)
+->'confirm password' must match whatever is written in the 'password' field; otherwise, the form submission will be halted with an error message "Passwords do not match." (use JavaScript for this validation, add necessary code for this)
+
+Now onto the design (CSS) part. Design the form according to the following instructions:
+
+-> whenever any field is focused (clicked or being written on), that field should have a blue border for the time being. If the field is out of focus, the border will also be gone
+-> The text color inside the 'Create Account' button should be white, and the background should be dark green. Whenever the button is hovered, the background color and text color should interchange or swap (text color should be dark green and the background color should be white)
+-> whenever a field is found incorrect after submitting the form, i.e., clicking the 'Create Account' button, that field should have a red border.
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Account</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container input[type="tel"],
+    .form-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: darkgreen;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-container input[type="submit"]:hover {
+      background-color: white;
+      color: darkgreen;
+    }
+
+    .form-container input:invalid {
+      border-color: red;
+    }
+
+    .form-container input:focus {
+      outline: none;
+      border-color: blue;
+    }
+
+    .form-container input:invalid:focus {
+      border-color: red;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirm-password").value;
+      if (password !== confirmPassword) {
+        document.getElementById("confirm-password").setCustomValidity("Passwords do not match.");
+      } else {
+        document.getElementById("confirm-password").setCustomValidity("");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create Account</h2>
+    <form onsubmit="validateForm()">
+      <div>
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" pattern="[A-Za-z]+" required>
+      </div>
+      <div>
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" pattern="[A-Za-z]+" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" required>
+      </div>
+      <div>
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" required>
+      </div>
+      <div>
+        <input type="submit" value="Create Account">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

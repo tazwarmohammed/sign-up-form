@@ -16,10 +16,49 @@
 
     <div id="form-holder">
         <div class="text-holder">
-            <p>This is not a real online service! You know you need something like this in your 
-                life to help you realize your deepest dreams. Sign up <i>now</i> to get started.</p>
-            <p>You <i>know</i> you want to.</p>
+            <h2>This is not a real online service! You know you need something like this in your 
+                life to help you realize your deepest dreams. Sign up <i>now</i> to get started.</h2>
+            <h2>You <i>know</i> you want to.</h2>
         </div>
+
+        <div class="form-container">
+        <form id="registration-form">
+            <h2>Let's do this!</h2>
+            <table>
+                <tr>
+                    <td><label for="first-name">First Name:</label></td>
+                    <td><label for="last-name">Last Name:</label></td>
+                </tr>
+
+                <tr>
+                    <td><input type="text" id="first-name" pattern="[A-Za-z]+" required></td>
+                    <td><input type="text" id="last-name" pattern="[A-Za-z]+" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><label for="phone">Phone Number:</label></td>
+                </tr>
+
+                <tr>
+                    <td><input type="email" id="email" required></td>
+                    <td><input type="tel" id="phone" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><label for="confirm-password">Confirm Password:</label></td>
+                </tr>
+
+                <tr>
+                    <td><input type="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" required></td>
+                    <td><input type="password" id="confirm-password" required></td>
+                </tr>
+            </table>
+            <button type="submit" class="create-account-btn">Create Account</button>
+            <h3>Already have an account? <span>Log in</span></h3>
+          </form>
+          </div>
 
     </div>
 </body>

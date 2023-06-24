@@ -13,6 +13,8 @@ body {
     display: grid;
     grid-template-columns: 1.25fr 2fr;
     grid-gap: 10px;
+    font-family: Arial, sans-serif;
+    background-color: #00000031;
 }
 
 #image-holder {
@@ -42,19 +44,110 @@ body {
     color: white;
     font-size: 100px;
     padding-top: 13px;
-    position: absolute;
-    top: 0px;
-    left: 210px;
+    margin-left: 90px;
 }
 
 .text-holder {
     padding-top: 120px;
-    /* padding-bottom: ; */
     padding-left: 30px;
     padding-right: 100px;
+    margin-bottom: 70px;
 }
 
-#form-holder p {
-    font-size: 25px;
+form {
+    padding-left: 35px;
 }
 
+
+/* form design */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 17vw;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+    border-color: blue;
+}
+
+.invalid {
+    border-color: red;
+}
+
+.create-account-btn {
+    margin-top: 70px;
+    color: white;
+    background-color: darkgreen;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.create-account-btn:hover {
+    color: black;
+    background-color: rgba(0, 100, 0, 0.5);
+}
+
+span {
+    color: darkgreen;
+}
+
+/* .form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container input[type="password"] {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container input[type="submit"] {
+    background-color: darkgreen;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: white;
+    color: darkgreen;
+}
+
+.form-container input:invalid {
+    border-color: red;
+}
+
+.form-container input:focus {
+    outline: none;
+    border-color: blue;
+}
+
+.form-container input:invalid:focus {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+} */
