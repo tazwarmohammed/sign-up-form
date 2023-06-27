@@ -2,4 +2,4 @@
 
 A sign-up form for an imaginary service!
 
-Live link: Live link: https://tazwarmohammed.github.io/sign-up-form/
+Live link: https://tazwarmohammed.github.io/sign-up-form/
